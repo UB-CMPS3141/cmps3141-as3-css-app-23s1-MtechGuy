@@ -1,0 +1,190 @@
+/* CSS code for Imporvement 1 
+
+/* Reset some default styles and remove margins */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Style the main content area */
+#main {
+	background-color: #ffffff;
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1200px;
+	padding: 20px;
+}
+
+/* Style the header image */
+#header-image {
+	width: 100%;
+	height: auto;
+}
+
+/* Style the navigation menu */
+#nav {
+	padding: 20px;
+	background-color: #fffff0;
+}
+
+#nav a {
+	color: #0000ff;
+	text-decoration: none;
+}
+
+/* Style the main content text */
+#content {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 20px 0;
+	color: #000000;
+}
+
+/* Style headings */
+h2 {
+	font-size: 24px;
+	color: #000000;
+}
+
+/* Style images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Style links */
+a {
+	color: #0000ff;
+	text-decoration: none;
+}
+
+/* Style the footer */
+footer {
+	text-align: center;
+	padding: 20px;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+
+/* CSS code for Imporvement 2 
+
+/* Improve readability */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header styles */
+#topban {
+    background-color: #006bb6;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Links*/
+a {
+    color: #006bb6;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main content container */
+#sortable-results {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Listings */
+.result-row {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* Footer */
+#footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #topban {
+        padding: 5px;
+    }
+
+    #sortable-results {
+        padding: 10px;
+    }
+}
+
+/* CSS code for Imporvement 3 */
+
+#site-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+#primary-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#primary-menu li {
+    margin-right: 20px;
+}
+
+#primary-menu a {
+    text-decoration: none;
+    color: #fff;
+    /* Add your desired text color */
+    font-weight: bold;
+}
+
+#primary-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Style the search button */
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #fff;
+    /* Add your desired text color */
+    font-size: 20px;
+}
+
+/* Style the mobile menu text */
+.mobile-menu {
+    display: none;
+}
+
+/* Show the mobile menu text on smaller screens */
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        display: inline;
+    }
+}

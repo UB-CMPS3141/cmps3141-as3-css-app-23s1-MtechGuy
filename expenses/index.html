@@ -1,25 +1,158 @@
-<!--CMPS3141-HCI - AS3-23S1
+<!-- CMPS3141-HCI - AS3-23S1
 Collaborators:
 Date: Sept.22.23
- -->
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Expenses</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expenses</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app">
-	<!-- Replace cmps3141-as3-css_app-23s1 below with your repo name (cmps3141-as3-css_app-23s1-yourusername) so you can save!  -->
-	<ma-data v-model="expenses" src="https://github.com/UB-CMPS3141/as3-css_app-23s1/expenses/data.json"></ma-data>
+  <!-- Replace cmps3141-as3-css_app-23s1 below with your repo name (cmps3141-as3-css_app-23s1-yourusername) so you can save!  -->
+  <ma-data v-model="expenses" src="https://github.com/UB-CMPS3141/cmps3141-as3-css-app-23s1-MtechGuy/expenses/data.json"></ma-data>
 
-	<!-- App YOUR UI here -->
+  <!-- App YOUR UI here -->
+  <div class="container" v-cloak>
+    <section id="expense-manager">
+      <h1>Expenses Management App</h1>
+      <p>*Instructions: Be sure to input Payer A name and Payer B name then click save before proceeding!*</p>
+      <div>
+        Payer A name:
+        <input type="text" v-model="personA" class="personinput">
+        <button class="js-inputButton" v-on:click.prevent="saveButton">Save</button>
+      </div>
+      <div>
+        Payer B name:
+        <input type="text" v-model="personB" class="person2input">
+        <button class="js-inputButton2" v-on:click.prevent="saveButton2">Save</button>
+      </div>
+      <br>
+      <table>
+        <tr>
+          <h3>Debt Summmary</h3>
+          <td>
+            <table>
+              <td>Total {{personA}} Owes:</td>
+              <td>{{(totalPersonAOwes-totalPersonBOwes).toFixed(2)}} BZD</td>
+            </table>
+          </td>
 
-	<!-- Delete this line when you write your actual UI -->
-	{{ expenses.length }} expenses loaded.
+          <td>
+            <table>
+              <td>Total {{personB}} Owes:</td>
+              <td>{{(totalPersonBOwes-totalPersonAOwes).toFixed(2)}} BZD</td>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <h3>Add Payment</h3>
+      <p>{{errors}}</p>
+      <div class="form-container">
+        <form>
+          <table>
+            <tr>
+              <td>
+                <label for="payer">Select Payer:</label>
+              </td>
+              <td>
+                <select v-model="form.payer">
+                  <option :value=personA>{{personA}}</option>
+                  <option :value=personB>{{personB}}</option>
+                  <option value=Joint>{{joint}}</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="payingTo">Who is the Payment to:</label>
+              </td>
+              <td>
+                <select v-model="form.payingTo">
+                  <option :value=personB>{{personB}}</option>
+                  <option value=Joint>{{joint}}</option>
+                  <option :value=personA>{{personA}}</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="amount">Amount:</label>
+              </td>
+              <td>
+                <select v-model="form.currency">
+                  <option value="BZD">BZD</option>
+                  <option value="MXN">MXN</option>
+                  <option value="GTQ">GTQ</option>
+                </select>
+                <input type="number" min="0.00" v-model="form.amount">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="description">Add Description:</label>
+              </td>
+              <td>
+                <input type="text" v-model="form.description" placeholder="description">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="pDate">Date of Payment:</label>
+              </td>
+              <td>
+                <input type="date" :max="nowDate" v-model="form.pDate">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button v-on:click.prevent="addPayment" class="paymentButton">Add Payment</button>
+                <td style="text-align: center; padding: 10px; background-color: #f5f5f5; border-radius: 5px;">
+                  <a href="writeup.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 18px;">
+                    writeup
+                  </a>
+                </td>
+                
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </section>
+  </div>
+  <section id="expense-list" v-cloak>
+    <h2>Expense List</h2>
+    <table class="paymentTable">
+      <tr>
+
+        <th>Date</th>
+        <th>Payer</th>
+        <th>Paid To</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>{{personA}} Owes</th>
+        <th>{{personB}} Owes</th>
+        <th>Action</th>
+      </tr>
+
+      <tr v-for="(expense, index) in expenses" :key="expense.id">
+        <td>{{expense.pDate}}</td>
+        <td>{{expense.payer}}</td>
+        <td>{{expense.payingTo}}</td>
+        <td>{{expense.formAmount}} {{expense.currency}}</td>
+        <td>{{expense.description}}</td>
+        <td>{{expense.personAOwes}} BZD</td>
+        <td>{{expense.personBOwes}} BZD</td>
+        <td><button v-on:click.prevent="deleteRow(index)">Delete</button></td>
+      
+      </tr>
+    </table>
+  </section>
 </div>
 
 <script src="index.js" type="module"></script>

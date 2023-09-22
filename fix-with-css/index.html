@@ -9,8 +9,141 @@ Date: Sept.22.23
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Fix the Web with CSS!</title>
+	<style>/* Reset some default styles */
+		body, h1, h2, h3, p, a {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.6;
+		}
+		
+		/* Header styles */
+		.header {
+			background-color: rgb(58, 161, 201);
+			color: white;
+			height: 50px;
+			font-size: 30px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		/* Table of Contents styles */
+		.table-of-contents {
+			margin: 0 60px;
+		}
+		
+		.table-of-contents h2 {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		
+		.table-of-contents a {
+			text-decoration: none;
+			color: #333; /* Change color as needed */
+			margin-right: 20px;
+		}
+		
+		/* Introduction styles */
+		.introduction {
+			margin-top: 100px;
+		}
+		
+		.introduction p {
+			line-height: 1.5;
+		}
+		
+		/* Improvement sections styles */
+		.improvement-section {
+			margin-top: 40px;
+		}
+		
+		.improvement-section h2 {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		
+		.improvement-section p {
+			line-height: 1.5;
+		}
+		
+		/* Image styles */
+		.improvement-image {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-left: 10px;
+			width: 500px;
+		}
+		
+		.improvement-image h3 {
+			font-size: 18px;
+		}
+		
+		.improvement-image img {
+			max-width: 100%;
+			height: auto;
+			margin-right: 30px;
+		}
+		</style>
 </head>
-<body>
+<body style="font-family: Arial; font-size: 16px; line-height: 25px;">
+	<div style="width:100%; background-color: rgb(58, 161, 201); color: white; height: 50px; font-size: 30px; display: flex; align-items: center; justify-content: center;">Excersice 1</div>
+	<div style="margin-left: 60px; margin-right: 60px;">
+		<h2>Table of Contents</h2>
+		<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 500px; padding-left: 50px; margin-bottom: 60px;">
+			<a href="#Improvement1">Improvement 1</a>
+			<a href="#Improvement2">Improvement 2</a>
+			<a href="#Improvement3">Improvement 3</a>
+		</div>
 
+		<h2>Introduction</h2>
+		<p>The website I chose to improve its usability are <a href="http://hamuniverse.com/balun.html" target="_blank">Hamuniverse.com</a> for the first improvement, <a href="https://www.craigslist.org/about/sites" target="_blank">Craigslist</a> for the second improvemnt and <a href="https://belize.com/" target="_blank">Belize.com</a> for the third. Although they may seem like okay websites, improvements can be made to allow for better usability. Below includes screenshots of the websites being modified in an attempt to fix a usability dimension. Here is the css file for the improvements for you to test <a target="_blank" href="fixed.css">(CSS File)</a> </p>
+
+		<div style="margin-top: 100px;">
+			<h2 id="Improvement1">Improvement 1</h2>
+			<p>The first enhancement focuses on improving the homepage's learnability. As it stands, the the margins and the text from the website is unappealing, making the text difficult to read, especially in the centre with the contents to click on. Thus, changing the changing Margin and reformating the text with its contents and making it bigger improves readability, making it more apparent and learnable, particularly for people with poor eyesight.</p><div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px; width: 500px;">
+				<div>
+					<div><h3>Before</h3></div>
+					<div style="margin-right: 30px;"><img src="images/Original 1.png" alt="O1" width="570px" height="400px"></div>
+				</div>
+				<div>
+					<div><h3>After</h3></div>
+					<div><img src="images/Fix 1 Learnability.png" alt="I1" width="570px" height="400px"></div>
+				</div>
+			</div>
+
+			<h2 id="Improvement2">Improvement 2</h2>
+			<p>The second improvement on the Craigslist site, as seen in the preceding screenshot, is quite jammed. The letters are small, and there is very little line spacing. So, by increasing those, the safety usability dimension is increased, so that slips error types do not occur, such as when you try to click one link but accidentally click another since they are so near together.
+			</p><div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px; width: 500px;">
+				<div>
+					<div><h3>Before</h3></div>
+					<div style="margin-right: 30px;"><img src="images/original 2.png" alt="O2" width="570px" height="250px"></div>
+				</div>
+				<div>
+					<div><h3>After</h3></div>
+					<div><img src="images/Fix 2 Safety.png" alt="I2" width="570px" height="250px"></div>
+				</div>
+			</div>
+
+			<h2 id="Improvement3">Improvement 3</h2>
+			<p>The third improvement is on the Belize website homepage, as seen in the previous screenshot, it showa that the nav items are quite spaced out and small, which can affect efficiency. So by reducing the spacing, change the background-color, and the text color, the Efficiency usability dimension is increased, making it more efficient and easier to access without having to move the mouse around a lot to reach an item on the Navigation bar.
+				<div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 10px; width: 500px;">
+				<div>
+					<div><h3>Before</h3></div>
+					<div style="margin-right: 30px;"><img src="images/original 3.png" alt="O3" width="570px" height="400px"></div>
+				</div>
+				<div>
+					<div><h3>After</h3></div>
+					<div><img src="images/Fix 3 Efficiency.png" alt="I3" width="570px" height="400px"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

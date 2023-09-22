@@ -1,5 +1,181 @@
-/*
-CMPS3141-HCI - AS3-23S1
-Collaborators:
-Date: Sept.22.23
-*/
+/* Add styling for the body */
+[v-cloak] {
+    display: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Add styling for the header */
+#app {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    height: calc(100vh - 40px);
+}
+
+/* Style the sidebar (expense-manager) */
+#expense-manager {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    max-width: 350px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Add display flex */
+    flex-direction: column; /* Make it a column layout */
+}
+
+/* Style the form-container */
+.form-container {
+    display: flex; /* Add display flex */
+    justify-content: space-between; /* Push elements to the right */
+    align-items: center; /* Center vertically within the container */
+}
+
+/* Style the main content (expense-list) */
+#expense-list {
+    flex: 2;
+    padding: 20px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+/* Style the header (h1) */
+h1 {
+    color: #007bff;
+    font-size: 25px;
+}
+
+/* Style the form elements */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Style the labels */
+label {
+    flex-basis: 100%;
+    font-weight: bold;
+    margin-top: 10px; /* Add margin to separate labels */
+}
+
+/* Style the input elements */
+input[type="text"],
+input[type="number"],
+select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px; /* Add margin to separate input elements */
+}
+
+/* Style the buttons */
+button[type="submit"],
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add margin to separate buttons */
+}
+
+/* Style button hover state */
+button[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the delete button */
+button[type="button"] {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="button"]:hover {
+    background-color: #c82333;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc; /* Add a bottom border to separate table rows */
+}
+
+table th {
+    padding: 12px;
+    text-align: left;
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: 2px solid #0056b3; /* Add a thicker border at the bottom of table headers */
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the delete button within the table */
+table button[type="button"] {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+table button[type="button"]:hover {
+    background-color: #c82333;
+}
